@@ -1,5 +1,4 @@
-// A. Interface for Role
-abstract class Role {
+abstract class Role {     // A. Interface for Role
   void displayRole();
 }
 
@@ -9,21 +8,20 @@ class Person implements Role {
   int age;
   String address;
 
-  Person(this.name, this.age, this.address);
+  Person(this.name, this.age, this.address); // Role interface. (by the 'implements') & constructor
 
-  // Getter methods
-  String get getName {
-    return name;
-  }
-  int get getAge => age; ///lamda
-  String get getAddress => address;
-
-  // Implement the Role interface methods.
+  /// Implement the Role interface methods.
   @override
   void displayRole() {
     print("Role: Person");
 
   }
+  // Getter methods
+  String get getName {
+    return name;
+  }
+  int get getAge => age; //lamda
+  String get getAddress => address;
 }
 
 // C. Student Class that extends Person:
@@ -33,11 +31,8 @@ class Student extends Person {
   List<int> courseScores;
 
   Student(String name, int age, String address,
-    this.studentID,
-    this.grade,
-    this.courseScores,
-  ) : super(name, age, address);
-
+      this.studentID, this.grade, this.courseScores)
+      : super(name, age, address);
   @override
   void displayRole() {
     print("Role: Student");
@@ -57,13 +52,9 @@ class Teacher extends Person {
   String teacherID;
   List<String> coursesTaught;
 
-  Teacher(
-    String name,
-    int age,
-    String address,
+  Teacher(String name, int age, String address,
     this.teacherID,
-    this.coursesTaught,
-  ) : super(name, age, address);
+    this.coursesTaught) : super(name, age, address);
 
   @override
   void displayRole() {
